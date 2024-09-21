@@ -4,16 +4,52 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  background-color: #efefef;
+}
+
 @layer components {
-    .primary-btn {
-        @apply bg-primary text-white font-semibold py-3 px-6 rounded-xl
+  .primary-btn {
+    @apply bg-primary text-white font-semibold py-3 px-6 rounded-xl
         shadow-[0px_10px_14px_-7px_#de0029]
         hover:!scale-110 duration-300;
-    }
+  }
 }
 
 @layer utilities {
-    .drop-shadow {
-      filter: drop-shadow(-6px 8px 15px rgba(0, 0, 0, 0.2));
-    }
+  .drop-shadow {
+    filter: drop-shadow(-6px 8px 15px rgba(0, 0, 0, 0.2));
   }
+}
+
+.carousel {
+  @apply flex justify-center;
+}
+
+.carousel-inner {
+  @apply w-full max-w-3xl mx-auto;
+}
+
+.carousel-item {
+  @apply relative h-32;
+}
+
+.carousel-item img {
+  @apply w-full h-full object-cover rounded-full;
+}
+
+.carousel-caption {
+  @apply text-2xl font-bold text-slate-900;
+}
+
+.carousel-indicators {
+  @apply flex justify-center mb-4;
+}
+
+.carousel-indicators li {
+  @apply inline-flex justify-center whitespace-nowrap rounded-full px-3 py-1.5 m-1.5 text-xs shadow-sm focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600 transition-colors duration-150;
+}
+
+.carousel-indicators li.active {
+  @apply bg-indigo-500 text-white shadow-indigo-950/10;
+}
